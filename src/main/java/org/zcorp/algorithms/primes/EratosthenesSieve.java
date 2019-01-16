@@ -9,9 +9,9 @@ import static java.util.stream.Collectors.toList;
 /**
  * Алгоритм "Решето Эратосфена"
  */
-public class Sieve {
+public class EratosthenesSieve {
     public static void main(String[] args) {
-        Util.sift(args, Sieve::sieve);
+        Util.sift(args, EratosthenesSieve::sieve);
     }
 
     /**
