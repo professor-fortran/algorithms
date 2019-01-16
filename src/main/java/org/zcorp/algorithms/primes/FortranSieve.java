@@ -8,20 +8,7 @@ import java.util.List;
  */
 public class FortranSieve {
     public static void main(String[] args) {
-        if (args.length != 1) {
-            System.err.println("Укажите один параметр: максимальное натуральное число >= 2, до которого нужно искать простые числа!");
-            return;
-        }
-        int n;
-        try {
-            n = Integer.parseInt(args[0]);
-        } catch (NumberFormatException e) {
-            System.err.println("Укажите натуральное число >= 2!");
-            return;
-        }
-
-        System.out.println("Простые числа до " + n + " включительно:");
-        System.out.println(sieve(n));
+        Util.sift(args, FortranSieve::sieve);
     }
 
     /**
