@@ -9,9 +9,9 @@ import static java.util.stream.Collectors.toList;
 /**
  * Алгоритм "Решето Эратосфена"
  */
-public class EratosthenesSieve {
+public class EratosthenesSieve implements Sieve {
     public static void main(String[] args) {
-        Util.sift(args, EratosthenesSieve::sieve);
+        Util.sift(args, (n) -> new EratosthenesSieve().sieve(n));
     }
 
     /**
@@ -20,7 +20,8 @@ public class EratosthenesSieve {
      * @param n положительное целое число >= 2
      * @return список простых чисел, меньших или равных n
      */
-    private static List<Integer> sieve(int n) {
+    @Override
+    public List<Integer> sieve(int n) {
         if (n < 2) {
             throw new IllegalArgumentException("Число должно быть >= 2!");
         }

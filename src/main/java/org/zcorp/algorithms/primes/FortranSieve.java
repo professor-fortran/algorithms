@@ -6,9 +6,9 @@ import java.util.List;
 /**
  * Алгоритм "Решето Фортрана"
  */
-public class FortranSieve {
+public class FortranSieve implements Sieve {
     public static void main(String[] args) {
-        Util.sift(args, FortranSieve::sieve);
+        Util.sift(args, (n) -> new FortranSieve().sieve(n));
     }
 
     /**
@@ -17,7 +17,8 @@ public class FortranSieve {
      * @param n положительное целое число >= 2
      * @return список простых чисел, меньших или равных n
      */
-    private static List<Integer> sieve(int n) {
+    @Override
+    public List<Integer> sieve(int n) {
         if (n < 2) {
             throw new IllegalArgumentException("Число должно быть >= 2!");
         }

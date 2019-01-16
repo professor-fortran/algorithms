@@ -1,13 +1,10 @@
 package org.zcorp.algorithms.primes;
 
-import java.util.List;
-import java.util.function.IntFunction;
-
 public class Util {
-    private Util () {
+    private Util() {
     }
 
-    public static void sift(String[] args, IntFunction<List<Integer>> sieve) {
+    public static void sift(String[] args, Sieve sieve) {
         if (args.length != 1) {
             System.err.println("Укажите один параметр: максимальное натуральное число >= 2, до которого нужно искать простые числа!");
             return;
@@ -21,6 +18,6 @@ public class Util {
         }
 
         System.out.println("Простые числа до " + n + " включительно:");
-        System.out.println(sieve.apply(n));
+        System.out.println(sieve.sieve(n));
     }
 }
