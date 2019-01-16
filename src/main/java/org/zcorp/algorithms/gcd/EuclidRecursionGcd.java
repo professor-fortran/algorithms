@@ -1,9 +1,10 @@
 package org.zcorp.algorithms.gcd;
 
 /**
- * Алгоритм Евклида для вычисления НОД (наибольшего общего делителя) двух целых чисел
+ * Алгоритм Евклида для вычисления НОД (наибольшего общего делителя) двух целых чисел.
+ * Рекурсивный вариант
  */
-public class EuclidGcd implements Gcd {
+public class EuclidRecursionGcd implements Gcd {
     @Override
     public double gcd(int m, int n) {
         if (n < 0 || m < 0) {
