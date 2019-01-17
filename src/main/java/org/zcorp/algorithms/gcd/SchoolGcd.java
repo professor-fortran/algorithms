@@ -28,12 +28,12 @@ public class SchoolGcd implements Gcd {
         return new Auxiliary(m, n).gcd();
     }
 
-    private static class Auxiliary {
+    public static class Auxiliary {
         private final int m;
         private final int n;
         private final List<Integer> primes;
 
-        private Auxiliary(int m, int n) {
+        public Auxiliary(int m, int n) {
             this.m = m;
             this.n = n;
             this.primes = new EratosthenesSieve().sieve(Math.max(m, n));
@@ -65,7 +65,7 @@ public class SchoolGcd implements Gcd {
             return commonPrimeFactors;
         }
 
-        private double gcd() {
+        public double gcd() {
             Map<Integer, Integer> mPrimeFactors = getPrimeFactors(m);
             Map<Integer, Integer> nPrimeFactors = getPrimeFactors(n);
 
